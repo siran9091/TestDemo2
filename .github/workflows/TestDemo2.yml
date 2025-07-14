@@ -1,13 +1,8 @@
-version: '1.0'
-'on': push
-steps:
-  unit-test-step:
-    image: 'go:onbuild'
-    commands:
-      - go test
-  build-example:
-    type: build
-    description: yaml example
-    image-name: codefresh-io/image
-    dockerfile: Dockerfile
-    tag: latest
+name: hello-world
+on: push
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "Hello World2!"
